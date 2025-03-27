@@ -20,7 +20,8 @@
 }
 
 html,body{
-    height: 100%;
+    height: auto;
+    min-height: 100vh;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -32,12 +33,15 @@ html,body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
+    padding: 20px;
 }
 
 .card{
     width: 500px;
-    min-height: 520px;
+    min-height: 500px;
+    height: auto;
     padding: 30px;
     background-color: white;
     border-radius: 10px;
@@ -50,6 +54,7 @@ html,body{
     font-weight: 700;
     font-style: normal;
     color: var(--grey-900);
+    margin-top: 15px;
 }
 
 .first-name,
@@ -179,4 +184,52 @@ button{
 input.error,
 textarea.error{
     border: 1px solid var(--red) !important;
+}
+
+.messagesent-container{
+    width: 320px;
+    height: 70px;
+    background-color: var(--grey-900);
+    border-radius: 5px;
+    padding: 10px;
+    position: relative;
+    bottom: 540px;
+    left: 50px;
+}
+
+ .message-sent .message2{
+    color: white;
+    position: relative;
+    left: 30px;
+    bottom: 18px;
+}
+
+.message-sent .message3{
+    color: var(--green-200);
+}
+
+@media (max-width: 600px) {
+    .card{
+        width: 70%;
+        min-height: 90%;
+        height: auto;
+    }
+
+    .name-container{
+        flex-direction: column;
+    }
+
+    .radio-group{
+        flex-direction: column;
+    }
+
+    .card-container{
+        padding-top: 65px;
+    }
+
+    .messagesent-container{
+        position: relative;
+        bottom: 690px;
+        margin-left: -130px;
+    }
 }

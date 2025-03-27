@@ -14,6 +14,21 @@ document.addEventListener("DOMContentLoaded", function () {
         radio.checked = true;
       });
     });
+
+    const checkboxOptions = document.querySelectorAll(".checkbox-container");
+    checkboxOptions.forEach((option) => {
+        const checkbox = option.querySelector("input[type='checkbox']");
+        const icon = option.querySelector(".checkbox-icon");
+        option.addEventListener("click",function(){
+            document.querySelectorAll(".checkbox-container").forEach((opt) => {
+                opt.querySelector("input[type='checkbox']").style.display = "inline-block";
+                opt.querySelector(".checkbox-icon").style.display = "none";
+            });
+            checkbox.style.display = "none";
+            icon.style.display = "inline-block";
+            radio.checked = true;
+        });
+    });
   
     // Form alanları
     const firstName = document.getElementById("first-name");
@@ -123,6 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.querySelectorAll(".radio-icon").forEach((icon) => {
                 icon.style.display = "none";
             });
+            document.getElementById("messagesent-container").style.display = "block";
         }
     });
 });
